@@ -1,4 +1,4 @@
-package com.shopping.order.dto;
+package com.shopping.payment.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
  * @create 2021/4/4 18:53
  */
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class CommonResult <T>{
 
 

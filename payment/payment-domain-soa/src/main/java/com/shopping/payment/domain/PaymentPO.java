@@ -1,4 +1,4 @@
-package com.shopping.payment.domain;
+package com.shopping.payment.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -13,7 +13,7 @@ import java.io.Serializable;
  */
 @Data
 @TableName("payment")
-public class Payment implements Serializable {
+public class PaymentPO implements Serializable {
     @TableId(type = IdType.AUTO)
     private Long id;
     private String serial;
