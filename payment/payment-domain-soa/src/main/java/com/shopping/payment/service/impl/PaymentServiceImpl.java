@@ -6,9 +6,7 @@ import com.shopping.payment.entity.PaymentPO;
 import com.shopping.payment.factory.PaymentFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -17,6 +15,7 @@ import javax.annotation.Resource;
  * @create 2021/4/4 19:03
  */
 @Slf4j
+@RequestMapping("/payment")
 @RestController
 public class PaymentServiceImpl {
     @Resource
@@ -24,14 +23,14 @@ public class PaymentServiceImpl {
     @Autowired
     PaymentFactory paymentFactory;
 
-    @PostMapping(value = "/payment/create")
-    public Integer create(Payment payment){
+    @PostMapping(value = "/create")
+    public Integer create(@RequestBody Payment payment){
         PaymentPO paymentPo = paymentFactory.buildPaymentPo(payment);
         return paymentDao.insert(paymentPo);
     }
 
-    @GetMapping(value = "/payment/get/{id}")
-    public Payment getPaymentById(Long id){
+    @GetMapping(value = "/get/{id}")
+    public Payment getPaymentById(@PathVariable("id") Long id){
         PaymentPO paymentPo = paymentDao.selectById(id);
         return paymentFactory.buildPayment(paymentPo);
     }
