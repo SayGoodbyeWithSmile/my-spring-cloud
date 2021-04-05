@@ -9,7 +9,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * @author osmondy
  * @create 2021/4/4 19:14
  */
-//@ComponentScan(basePackages = {"com.shopping.*"})
 @EnableFeignClients
 @EnableDiscoveryClient
 @SpringBootApplication
