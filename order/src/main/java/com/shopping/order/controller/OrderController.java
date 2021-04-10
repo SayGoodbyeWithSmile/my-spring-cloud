@@ -1,8 +1,8 @@
 package com.shopping.order.controller;
 
-import com.shopping.order.service.PaymentService;
 import com.shopping.payment.dto.CommonResult;
 import com.shopping.payment.entity.Payment;
+import com.shopping.payment.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
